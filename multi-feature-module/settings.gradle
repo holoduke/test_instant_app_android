@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-include ':instant', ':installed', ':base', ':detail', ':main'
+include ':instant', ':installed', ':base', ':feature_match', ':feature_start', ':feature_combined'

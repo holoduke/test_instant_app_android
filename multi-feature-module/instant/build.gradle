@@ -35,6 +35,6 @@ android {
 
 dependencies {
     implementation project(":base")
-    implementation project(":main")
-    implementation project(":detail")
+    implementation project(':feature_start')
+    implementation project(':feature_match')
 }

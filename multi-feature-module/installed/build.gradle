@@ -21,17 +21,13 @@ android {
     buildToolsVersion rootProject.buildTools
 
     defaultConfig {
-        applicationId "com.example.android.unsplash"
+        applicationId "holoduke.soccer_gen"
         minSdkVersion rootProject.minSdk
         targetSdkVersion rootProject.targetSdk
         versionCode rootProject.versionCode
         versionName rootProject.versionName
     }
-
-    dataBinding {
-        enabled true
-    }
-
+    
     signingConfigs {
         release {
             keyAlias rootProject.keystoreProperties['keyAlias']
@@ -51,7 +47,8 @@ android {
 
 dependencies {
     implementation project(":base")
-    implementation project(":main")
-    implementation project(":detail")
+    implementation project(':feature_start')
+    implementation project(':feature_match')
+    implementation project(':feature_combined')
 }
 

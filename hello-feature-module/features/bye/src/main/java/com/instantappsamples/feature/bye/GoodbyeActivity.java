@@ -17,15 +17,39 @@
 package com.instantappsamples.feature.bye;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import com.example.library_bye.ByeFragment;
 
 
 /** Simple activity that says goodbye. */
 public class GoodbyeActivity extends AppCompatActivity {
 
+  public String TAG = "activity";
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    Log.d(TAG,"change me and you will see that i will change");
+
     setContentView(R.layout.activity_goodbye);
+
+    FragmentManager fm = getSupportFragmentManager();
+    FragmentTransaction ft = fm.beginTransaction();
+
+    Bundle b = new Bundle();
+    b.putString("test", "test123");
+
+    Fragment f = new ByeFragment();
+    f.setArguments(b);
+    f.setRetainInstance(false);
+    ft.add(R.id.fragment_target, f);
+    ft.addToBackStack(null);
+    ft.commit();
   }
 }
