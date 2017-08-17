@@ -17,13 +17,9 @@
 package com.instantappsamples.feature.bye;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
-import com.example.library_bye.ByeFragment;
+import android.view.ViewGroup;
 
 
 /** Simple activity that says goodbye. */
@@ -35,21 +31,10 @@ public class GoodbyeActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Log.d(TAG,"change me and you will see that i will change");
+    setContentView(com.google.android.instantapps.samples.feature.base.R.layout.base_layout);
 
-    setContentView(R.layout.activity_goodbye);
+    ViewGroup target = findViewById(com.google.android.instantapps.samples.feature.base.R.id.content_target);
 
-    FragmentManager fm = getSupportFragmentManager();
-    FragmentTransaction ft = fm.beginTransaction();
-
-    Bundle b = new Bundle();
-    b.putString("test", "test123");
-
-    Fragment f = new ByeFragment();
-    f.setArguments(b);
-    f.setRetainInstance(false);
-    ft.add(R.id.fragment_target, f);
-    ft.addToBackStack(null);
-    ft.commit();
+    getLayoutInflater().inflate(R.layout.layout_a, target);
   }
 }

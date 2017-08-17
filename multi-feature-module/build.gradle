@@ -18,12 +18,19 @@
 
 ext {
     buildTools = "26.0.0"
+<<<<<<< HEAD
     compileSdk = 25
     targetSdk = 25
     minSdk = 23
+=======
+    compileSdk = 26
+    targetSdk = 26
+    minSdk = 21
+    minSdkInstant = 23
+>>>>>>> a1486fccfcba9b0759c9ccd15e0ed8b49c6617d0
     versionCode = 1
     versionName = "1.0"
-    supportLib = "25.3.1"
+    supportLib = "25.4.0"
     glide = "3.7.0"
     retrofit = "1.9.0"
     keystoreProperties = new Properties()
@@ -35,19 +42,24 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 buildscript {
     repositories {
         jcenter()
+<<<<<<< HEAD
         maven {
             url 'https://maven.google.com'
         }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-alpha7'
+=======
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0-beta1'
+>>>>>>> a1486fccfcba9b0759c9ccd15e0ed8b49c6617d0
     }
 }
 allprojects {
     repositories {
-        maven {
-            url 'https://maven.google.com'
-        }
         jcenter()
+        google()
     }
 }

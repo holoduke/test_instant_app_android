@@ -28,7 +28,7 @@
     <Button android:id="@+id/button"
             android:background="@drawable/some_logo"
             android:layout_gravity="bottom|center_horizontal"
-            android:text="this text is now 3"
+            android:text="we should see a logo here"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
